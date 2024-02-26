@@ -4,7 +4,7 @@ import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import "./Form.css";
 
-axios.defaults.baseURL = "http://localhost:8000";
+axios.defaults.baseURL = "https://authapp-backend-v6t3.onrender.com";
 axios.defaults.withCredentials = true;
 
 const Login = () => {
