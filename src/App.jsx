@@ -6,13 +6,13 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import axios from "axios";
 import {Toaster} from 'react-hot-toast';
-import { UserContextProvider } from '../context/userContext';
+//import { UserContextProvider } from '../context/userContext';
 import Dashboard from './pages/Dashboard';
 
 function App() {
 
   return (
-    <UserContextProvider>
+    <>
     <Navbar/>
     <Toaster position='bottom-right' toastOptions={{duration: 2800}}/>
     <Routes>
@@ -21,7 +21,7 @@ function App() {
       <Route path='/login' element={<Login />} />
       <Route path='/dashboard' element={<Dashboard />} />
     </Routes>
-    </UserContextProvider>
+    </>
   )
 }
 

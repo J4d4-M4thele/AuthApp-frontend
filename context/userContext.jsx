@@ -1,12 +1,12 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
-export const userContext = createContext({});
+export const UserContext = createContext({});
 
 export function UserContextProvider({children}) {
-    const [User, setUser] = useState(null);
+    const [user, setUser] = useState(null);
     useEffect(() => {
-        if(!User) {
+        if(!user) {
             axios.get('/profile')
             .then(({data}) => {
                 setUser(data)
@@ -14,8 +14,8 @@ export function UserContextProvider({children}) {
         }
     }, [])
     return (
-        <userContext.Provider value={User}>
+        <UserContext.Provider value={[user, setUser]}>
             {children}
-        </userContext.Provider>
+        </UserContext.Provider>
     )
 }
